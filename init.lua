@@ -17,6 +17,4 @@ end
 
 require "lazy_setup"
 require "polish"
--- require "mappings"
--- require('telescope').load_extension 'remote-sshfs'
 

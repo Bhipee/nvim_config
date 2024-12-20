@@ -5,12 +5,17 @@ return {
     opts = {
       mappings = {
         -- first key is the mode
+        i = {
+          ["<C-s>"] = {"<cmd>w!<cr>", desc = "Save File"},
+          ["<D-s>"] = {"<cmd>w!<cr>", desc = "Save File"},
+        },
         n = {
           -- second key is the lefthand side of the map
           -- mappings seen under group name "Buffer"
-          -- ["<C-s>"] = {":w!<cr>", desc = "Save File"},
-          -- ["<A-Up>"] = {":m '>+1"},
-          -- ["<A-Down>"] = {":m '>-1"},
+          ["<C-s>"] = {"<cmd>w!<cr>", desc = "Save File"},
+          ["<D-s>"] = {"<cmd>w!<cr>", desc = "Save File"},
+          -- ["<A-Up>"] = {"<cmd>m '>+1<cr>"},
+          -- ["<A-Down>"] = {"<cmd>m '>-1<cr>"},
           ["H"] = {"^"},
           ["L"] = {"$"},
           ["J"] = {"5j"},
@@ -33,7 +38,11 @@ return {
         },
         t = {
           -- setting a mapping to false will disable it
-          -- ["<esc>"] = false,
+          ["<esc>"] = {"<C-\\><C-n>"},
+          ["<C-H>"] = {"<C-\\><C-n><C-w>h"},
+          ["<C-J>"] = {"<C-\\><C-n><C-w>j"},
+          ["<C-K>"] = {"<C-\\><C-n><C-w>k"},
+          ["<C-L>"] = {"<C-\\><C-n><C-w>l"},
         },
       },
     },
